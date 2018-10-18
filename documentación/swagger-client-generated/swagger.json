@@ -1,0 +1,1100 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "Mindty"
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/dguarch/Mindty/1.0.0",
+  "tags" : [ {
+    "name" : "Usuario",
+    "description" : "Información del usuario."
+  }, {
+    "name" : "Cursos",
+    "description" : "Información de los cursos, modulos y unidades"
+  }, {
+    "name" : "Login",
+    "description" : "Control de sesión por Token"
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/usuarios" : {
+      "get" : {
+        "tags" : [ "Usuario" ],
+        "summary" : "lista de usuarios",
+        "operationId" : "getUsuarios",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Usuario"
+              }
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "post" : {
+        "tags" : [ "Usuario" ],
+        "summary" : "añadir nuevo usuario",
+        "operationId" : "addUsuarios",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "usuario que se va añadir",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Usuario"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Usuario"
+              }
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/usuarios/{idu}" : {
+      "get" : {
+        "tags" : [ "Usuario" ],
+        "summary" : "muestra usuarios por ID",
+        "operationId" : "getUsuario",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idu",
+          "in" : "path",
+          "description" : "ID del usuario",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Usuario"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Usuario not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "Usuario" ],
+        "summary" : "actualizar usuario",
+        "operationId" : "updateUsuario",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idu",
+          "in" : "path",
+          "description" : "ID del usuario",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "actualizar el objeto usuario",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Usuario"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Usuario"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "User not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "Usuario" ],
+        "summary" : "eliminar usuario",
+        "operationId" : "deleteUsuario",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idu",
+          "in" : "path",
+          "description" : "ID del usuario a eliminar",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "User not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/cursos" : {
+      "get" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "lista de cursos",
+        "operationId" : "getCursos",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Curso"
+              }
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "post" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "añadir nuevo curso",
+        "operationId" : "addCursos",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "curso que se va añadir",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Curso"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Curso"
+              }
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/cursos/{idCurso}" : {
+      "get" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "muestra curso por ID",
+        "operationId" : "getCurso",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del curso",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Curso"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Curso not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "actualizar Curso",
+        "operationId" : "updateCurso",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del Curso",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "actualizar el objeto Curso",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Curso"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Curso"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Curso not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "eliminar Curso",
+        "operationId" : "deleteCurso",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del Curso a eliminar",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Curso not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/Cursos/{idCurso}/modulos" : {
+      "get" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "lista de Modulos",
+        "operationId" : "getModulos",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del Curso",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Modulo"
+              }
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "post" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "añadir nuevo Modulo",
+        "operationId" : "addModulo",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del Modulo",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "actualizar el objeto Modulo",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Modulo"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Modulo"
+              }
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/cursos/{idCurso}/modulos/{idm}" : {
+      "get" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "muestra modulo por ID",
+        "operationId" : "getModulo",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del curso",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idm",
+          "in" : "path",
+          "description" : "ID del modulo",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Modulo"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Modulo not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "actualizar modulo",
+        "operationId" : "updateModulo",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del curso",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idm",
+          "in" : "path",
+          "description" : "ID del Modulo",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "actualizar el objeto Modulo",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Modulo"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Modulo"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Modulo not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "eliminar modulo",
+        "operationId" : "deleteModulo",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del curso",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idm",
+          "in" : "path",
+          "description" : "ID del Modulo a eliminar",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Modulo not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/Cursos/{idCurso}/modulos/{idm}/unidades" : {
+      "get" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "lista de unidades",
+        "operationId" : "getUnidades",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del Curso",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idm",
+          "in" : "path",
+          "description" : "ID del Modulo",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Unidad"
+              }
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "post" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "añadir nueva Unidad",
+        "operationId" : "addUnidad",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del Curso",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idm",
+          "in" : "path",
+          "description" : "ID del Modulo",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "actualizar el objeto Unidad",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Unidad"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Unidad"
+              }
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/cursos/{idCurso}/modulos/{idm}/unidades/{idUni}" : {
+      "get" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "muestra unidad por ID",
+        "operationId" : "getUnidad",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del curso",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idm",
+          "in" : "path",
+          "description" : "ID del modulo",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idUni",
+          "in" : "path",
+          "description" : "ID de la unidad",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Unidad"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Unidad not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "actualizar unidad",
+        "operationId" : "updateUnidad",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del curso",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idm",
+          "in" : "path",
+          "description" : "ID del Modulo",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idUni",
+          "in" : "path",
+          "description" : "ID de la unidad",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "actualizar el objeto unidad",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Unidad"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Unidad"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Unidad not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "Cursos" ],
+        "summary" : "eliminar unidad",
+        "operationId" : "deleteUnidad",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCurso",
+          "in" : "path",
+          "description" : "ID del curso",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idm",
+          "in" : "path",
+          "description" : "ID del Modulo a eliminar",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "idUni",
+          "in" : "path",
+          "description" : "ID de la unidad",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Unidad not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/login" : {
+      "get" : {
+        "tags" : [ "Login" ],
+        "summary" : "token de control de sesión",
+        "operationId" : "authCredencial",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "boolean"
+            }
+          },
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "Bearer" : {
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header"
+    }
+  },
+  "definitions" : {
+    "Usuario" : {
+      "type" : "object",
+      "properties" : {
+        "idu" : {
+          "type" : "integer"
+        },
+        "nombreUsuario" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "telefono" : {
+          "type" : "string"
+        },
+        "tipo" : {
+          "type" : "integer"
+        }
+      },
+      "example" : {
+        "password" : "password",
+        "tipo" : 6,
+        "idu" : 0,
+        "nombreUsuario" : "nombreUsuario",
+        "telefono" : "telefono",
+        "email" : "email"
+      }
+    },
+    "Alumno" : {
+      "type" : "object",
+      "properties" : {
+        "idu" : {
+          "type" : "integer"
+        },
+        "nombreUsuario" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "telefono" : {
+          "type" : "string"
+        },
+        "tipo" : {
+          "type" : "integer"
+        },
+        "listaNota" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Nota"
+          }
+        }
+      },
+      "example" : {
+        "password" : "password",
+        "tipo" : 1,
+        "listaNota" : [ {
+          "nid" : 5,
+          "usuario" : null,
+          "modulo" : {
+            "unidad" : [ {
+              "idUni" : 2,
+              "nombreUnidad" : "nombreUnidad"
+            }, {
+              "idUni" : 2,
+              "nombreUnidad" : "nombreUnidad"
+            } ],
+            "idm" : 5,
+            "nombreModulo" : "nombreModulo",
+            "nota" : null
+          },
+          "nota" : 7.061401241503109105224211816675961017608642578125
+        }, {
+          "nid" : 5,
+          "usuario" : null,
+          "modulo" : {
+            "unidad" : [ {
+              "idUni" : 2,
+              "nombreUnidad" : "nombreUnidad"
+            }, {
+              "idUni" : 2,
+              "nombreUnidad" : "nombreUnidad"
+            } ],
+            "idm" : 5,
+            "nombreModulo" : "nombreModulo",
+            "nota" : null
+          },
+          "nota" : 7.061401241503109105224211816675961017608642578125
+        } ],
+        "idu" : 6,
+        "nombreUsuario" : "nombreUsuario",
+        "telefono" : "telefono",
+        "email" : "email"
+      }
+    },
+    "Curso" : {
+      "type" : "object",
+      "properties" : {
+        "idCurso" : {
+          "type" : "integer"
+        },
+        "codCurso" : {
+          "type" : "string"
+        },
+        "nombreCurso" : {
+          "type" : "string"
+        },
+        "formador" : {
+          "$ref" : "#/definitions/Usuario"
+        },
+        "alumnos" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Alumno"
+          }
+        },
+        "horaCurso" : {
+          "type" : "integer"
+        },
+        "modulo" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Modulo"
+          }
+        }
+      },
+      "example" : {
+        "alumnos" : [ {
+          "password" : "password",
+          "tipo" : 1,
+          "listaNota" : [ {
+            "nid" : 5,
+            "usuario" : null,
+            "modulo" : {
+              "unidad" : [ {
+                "idUni" : 2,
+                "nombreUnidad" : "nombreUnidad"
+              }, {
+                "idUni" : 2,
+                "nombreUnidad" : "nombreUnidad"
+              } ],
+              "idm" : 5,
+              "nombreModulo" : "nombreModulo",
+              "nota" : null
+            },
+            "nota" : 7.061401241503109105224211816675961017608642578125
+          }, {
+            "nid" : 5,
+            "usuario" : null,
+            "modulo" : {
+              "unidad" : [ {
+                "idUni" : 2,
+                "nombreUnidad" : "nombreUnidad"
+              }, {
+                "idUni" : 2,
+                "nombreUnidad" : "nombreUnidad"
+              } ],
+              "idm" : 5,
+              "nombreModulo" : "nombreModulo",
+              "nota" : null
+            },
+            "nota" : 7.061401241503109105224211816675961017608642578125
+          } ],
+          "idu" : 6,
+          "nombreUsuario" : "nombreUsuario",
+          "telefono" : "telefono",
+          "email" : "email"
+        }, {
+          "password" : "password",
+          "tipo" : 1,
+          "listaNota" : [ {
+            "nid" : 5,
+            "usuario" : null,
+            "modulo" : {
+              "unidad" : [ {
+                "idUni" : 2,
+                "nombreUnidad" : "nombreUnidad"
+              }, {
+                "idUni" : 2,
+                "nombreUnidad" : "nombreUnidad"
+              } ],
+              "idm" : 5,
+              "nombreModulo" : "nombreModulo",
+              "nota" : null
+            },
+            "nota" : 7.061401241503109105224211816675961017608642578125
+          }, {
+            "nid" : 5,
+            "usuario" : null,
+            "modulo" : {
+              "unidad" : [ {
+                "idUni" : 2,
+                "nombreUnidad" : "nombreUnidad"
+              }, {
+                "idUni" : 2,
+                "nombreUnidad" : "nombreUnidad"
+              } ],
+              "idm" : 5,
+              "nombreModulo" : "nombreModulo",
+              "nota" : null
+            },
+            "nota" : 7.061401241503109105224211816675961017608642578125
+          } ],
+          "idu" : 6,
+          "nombreUsuario" : "nombreUsuario",
+          "telefono" : "telefono",
+          "email" : "email"
+        } ],
+        "horaCurso" : 9,
+        "codCurso" : "codCurso",
+        "idCurso" : 0,
+        "nombreCurso" : "nombreCurso",
+        "formador" : {
+          "password" : "password",
+          "tipo" : 6,
+          "idu" : 0,
+          "nombreUsuario" : "nombreUsuario",
+          "telefono" : "telefono",
+          "email" : "email"
+        },
+        "modulo" : [ {
+          "unidad" : [ {
+            "idUni" : 2,
+            "nombreUnidad" : "nombreUnidad"
+          }, {
+            "idUni" : 2,
+            "nombreUnidad" : "nombreUnidad"
+          } ],
+          "idm" : 5,
+          "nombreModulo" : "nombreModulo",
+          "nota" : null
+        }, {
+          "unidad" : [ {
+            "idUni" : 2,
+            "nombreUnidad" : "nombreUnidad"
+          }, {
+            "idUni" : 2,
+            "nombreUnidad" : "nombreUnidad"
+          } ],
+          "idm" : 5,
+          "nombreModulo" : "nombreModulo",
+          "nota" : null
+        } ]
+      }
+    },
+    "Modulo" : {
+      "type" : "object",
+      "properties" : {
+        "idm" : {
+          "type" : "integer"
+        },
+        "nombreModulo" : {
+          "type" : "string"
+        },
+        "unidad" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Unidad"
+          }
+        },
+        "nota" : {
+          "$ref" : "#/definitions/Nota"
+        }
+      },
+      "example" : {
+        "unidad" : [ {
+          "idUni" : 2,
+          "nombreUnidad" : "nombreUnidad"
+        }, {
+          "idUni" : 2,
+          "nombreUnidad" : "nombreUnidad"
+        } ],
+        "idm" : 5,
+        "nombreModulo" : "nombreModulo",
+        "nota" : null
+      }
+    },
+    "Unidad" : {
+      "type" : "object",
+      "properties" : {
+        "idUni" : {
+          "type" : "integer"
+        },
+        "nombreUnidad" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "idUni" : 2,
+        "nombreUnidad" : "nombreUnidad"
+      }
+    },
+    "Nota" : {
+      "type" : "object",
+      "properties" : {
+        "nid" : {
+          "type" : "integer"
+        },
+        "usuario" : {
+          "$ref" : "#/definitions/Alumno"
+        },
+        "modulo" : {
+          "$ref" : "#/definitions/Modulo"
+        },
+        "nota" : {
+          "type" : "number"
+        }
+      },
+      "example" : {
+        "nid" : 5,
+        "usuario" : null,
+        "modulo" : {
+          "unidad" : [ {
+            "idUni" : 2,
+            "nombreUnidad" : "nombreUnidad"
+          }, {
+            "idUni" : 2,
+            "nombreUnidad" : "nombreUnidad"
+          } ],
+          "idm" : 5,
+          "nombreModulo" : "nombreModulo",
+          "nota" : null
+        },
+        "nota" : 7.061401241503109105224211816675961017608642578125
+      }
+    }
+  }
+}

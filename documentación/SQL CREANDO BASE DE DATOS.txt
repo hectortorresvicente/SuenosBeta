@@ -1,0 +1,39 @@
+'CREATE DATABASE SuenosHTV'
+'CREATE TABLE Sueno
+(
+IDENTITY [ (seed , increment) ]
+column_fechaDelSueño data_type(size),
+column_fechaIntroduccionSueño data_type(size),
+column_titulo data_type(size),
+column_sueno data_type(size),
+column_comentario data_type(size),
+);
+
+
+
+CREATE TABLE Sueno
+(ids integer NOT NULL AUTO_INCREMENT, 
+fechaDelSueño date,
+fechaIntroduccionSueño date,
+titulo varchar(30),
+sueno varchar(30),
+comentario varchar(30),
+geolocalizacion varchar(30),
+cielo varchar(30),
+ PRIMARY KEY (ids));
+
+CREATE TABLE Geolocalizacion
+(idg integer NOT NULL AUTO_INCREMENT, 
+ciudad varchar(30),
+pais varchar(30),
+latitud varchar(30),
+geolocalizacion varchar(30),
+longitud varchar(30),
+ PRIMARY KEY (idg));
+
+CREATE TABLE Cielo
+(idc integer NOT NULL AUTO_INCREMENT, 
+cielo varchar(30),
+ PRIMARY KEY (idc));
+
+
