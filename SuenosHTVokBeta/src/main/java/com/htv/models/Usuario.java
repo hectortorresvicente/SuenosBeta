@@ -1,5 +1,6 @@
 package com.htv.models;
 
+import java.sql.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -29,6 +30,10 @@ public class Usuario {
 	private String nombre;
 	@Column(name = "contraseña")
 	private String contraseña;
+//	@Column(name = "fechaEntrada")
+//	private Date fechaEntrada;
+//	@Column(name = "fechaAhora")
+//	private Date fechaAhora;
 
 //	@OneToMany(mappedBy = "sueno",  cascade = CascadeType.ALL ) //fetch = FetchType.EAGER
 //	@JoinTable(name = "sueno", joinColumns = { @JoinColumn(name = "idu") }, inverseJoinColumns = {
@@ -66,10 +71,37 @@ public class Usuario {
 //	public void setListSueno(Set<Sueno> listSueno) {
 //		ListSueno = listSueno;
 //	}
+	
+
+	public Usuario(int idu, String correo, String nombre, String contraseña, Date fechaEntrada, Date fechaAhora) {
+		super();
+		this.idu = idu;
+		this.correo = correo;
+		this.nombre = nombre;
+		this.contraseña = contraseña;
+//		this.fechaEntrada = fechaEntrada;
+//		this.fechaAhora = fechaAhora;
+	}
 
 	public Usuario(String nombre, String contraseña) {
 		// TODO Auto-generated constructor stub
 	}
+
+//	public Date getFechaEntrada() {
+//		return fechaEntrada;
+//	}
+
+//	public void setFechaEntrada(Date fechaEntrada) {
+//		this.fechaEntrada = fechaEntrada;
+//	}
+//
+//	public Date getFechaAhora() {
+//		return fechaAhora;
+//	}
+//
+//	public void setFechaAhora(Date fechaAhora) {
+//		this.fechaAhora = fechaAhora;
+//	}
 
 	public Usuario(String correo2, String nombre2, String contraseña2) {
 		// TODO Auto-generated constructor stub

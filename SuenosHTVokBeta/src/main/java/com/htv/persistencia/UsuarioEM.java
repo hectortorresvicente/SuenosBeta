@@ -179,4 +179,9 @@ public class UsuarioEM extends EntityManager {
 		return Usuario;
 	}
 
+	public Usuario getSoloUltimaEntrada() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

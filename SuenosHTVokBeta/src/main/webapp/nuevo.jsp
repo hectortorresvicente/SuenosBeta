@@ -39,6 +39,8 @@
 		</div>
 		<div>
 		<span>año= ${fecha}</span>
+		
+		
 		</div>
 		<!-- <div>
 			<label>Idus </label><input type="text" name="idus"

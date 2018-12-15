@@ -37,7 +37,8 @@ public class LoginServlet extends HttpServlet {
 		String contraseña = request.getParameter("contraseña");
 		Usuario usuarioLoginValidando = UsuarioEM.getInstance().getLoginUsuario(nombre, contraseña);
 		System.out.println("validando usuario em login do post usuarioLoginValidando = " + usuarioLoginValidando);
-		
+		System.out.println("nombre = "+nombre);
+		System.out.println("contraseña = "+contraseña);
 		if(usuarioLoginValidando!=null) {
 			
 			

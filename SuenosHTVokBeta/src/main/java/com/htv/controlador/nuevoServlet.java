@@ -31,6 +31,8 @@ public class nuevoServlet extends HttpServlet {
 			int idUsuario = Integer.parseInt(request.getParameter("idu"));
 			request.setAttribute("idUsuario", idUsuario);
 			
+			
+			
 			Calendar calendario = Calendar.getInstance();
 			int año =calendario.get(Calendar.YEAR);
 			int mes =calendario.get(Calendar.MONTH);

@@ -22,6 +22,9 @@ break;
 		<h2>Logout</h2>
 	</a>
 	<button value="bton" onclick="TiempoLanza()"/>Entrar</button>
+	<br><br>
+	
+	<span> Ultima entrada =   ${dateSql}</span>
 	
 	<a href="http://localhost:8080/SuenosHTVokBeta/sueno
 	">
