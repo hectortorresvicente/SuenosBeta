@@ -30,6 +30,8 @@ p>a:link{color: rgb(0, 26, 255);}
 
 p>a:hover{color: red;}
 
+canvas { background: rgb(79, 143, 155) !important; display: block !important; margin: 0 auto !important; } 
+
 
 .breadcrumb-item{color: rgb(170, 5, 32) !important;}
 

@@ -8,10 +8,14 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-	
+
 <!--  CSS -->
 
 <link rel="stylesheet" href="./css/style.css">
+ <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
 
 <title>SueñoS</title>
 </head>
@@ -24,7 +28,9 @@
 	<label> ${error} </label>
 
 	<form action="" method="post">
-	<div> </div>
+		<div></div>
+		
+		
 
 		<!-- <div>
 			<label>Idu: </label><span type="text" name="ids" placeholder="Nombre"
@@ -50,11 +56,16 @@
 
 
 	<a href="./registro"><h3>No estoy registrado</h3></a>
+	
+	
 
+<canvas id="myCanvas" width="480" height="320"></canvas>
 
+<script src="./js/login.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js "
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
 		crossorigin="anonymous "></script>
+	
 
 </body>
 </html>
