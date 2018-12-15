@@ -50,6 +50,8 @@
 
 
 	<a href="./registro"><h3>No estoy registrado</h3></a>
+	
+	<a href="./juego"><h4>Me aburro- quiero jugar</h4></a>
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js "
