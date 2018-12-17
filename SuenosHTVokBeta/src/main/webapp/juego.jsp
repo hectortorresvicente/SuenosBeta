@@ -9,9 +9,7 @@
 </head>
 <body>
 	<button onClick="location='/SuenosHTVokBeta'">Ya jugue mucho, regresar</button>
-<div>
-	
-</div>
+
 <canvas id="myCanvas" width="700" height="500"></canvas>
 
 </body>

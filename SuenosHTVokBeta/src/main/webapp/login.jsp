@@ -15,7 +15,7 @@
 
 <title>SueñoS</title>
 </head>
-<body>
+<body id="body">
 
 
 	<h1>BD Sueños</h1>
@@ -40,8 +40,8 @@
 				placeholder="correo" value="Correo" />
 		</div> -->
 		<div>
-			<label>Contraseña </label><input type="contraseña" name="contraseña"
-				placeholder="contraseña" value="hola1" />
+			<label>Contraseña </label><input type="contraseï¿½a" name="contraseï¿½a"
+				placeholder="contraseï¿½a" value="hola1" />
 		</div>
 
 
@@ -57,6 +57,10 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js "
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
 		crossorigin="anonymous "></script>
+		
+		<script type="text/javascript" src="./js/login.js"></script>
+
+	
 
 </body>
 </html>
