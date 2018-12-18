@@ -1,12 +1,12 @@
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
-let ballRadius = 5;
+let ballRadius = 15;
 let x = canvas.width/2;
 let y = canvas.height-30;
 let dx = 2;
 let dy = -2;
-let paddleHeight = 50;
-let paddleWidth = 75;
+let paddleHeight = 10;
+let paddleWidth = 110;
 let paddleX = (canvas.width-paddleWidth)/2;
 let rightPressed = false;
 let leftPressed = false;
@@ -64,7 +64,7 @@ function collisionDetection() {
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
-                        alert("YOU WIN, CONGRATS!");
+                        alert("Ganaste, Felicidades!");
                         document.location.reload();
                     }
                 }
@@ -107,12 +107,12 @@ function drawBricks() {
 function drawScore() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
-    ctx.fillText("Score: "+score, 8, 20);
+    ctx.fillText("Puntos: "+score, 8, 20);
 }
 function drawLives() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
-    ctx.fillText("Lives: "+lives, canvas.width-65, 20);
+    ctx.fillText("Vidas: "+lives, canvas.width-65, 20);
 }
 
 function draw() {
@@ -137,7 +137,7 @@ function draw() {
         else {
             lives--;
             if(!lives) {
-                alert("GAME OVER");
+                alert("Perdiste");
                 document.location.reload();
             }
             else {
