@@ -40,8 +40,8 @@
 				placeholder="correo" value="Correo" />
 		</div> -->
 		<div>
-			<label>Contraseña </label><input type="contraseï¿½a" name="contraseï¿½a"
-				placeholder="contraseï¿½a" value="hola1" />
+			<label>Contraseña </label><input type="contraseña" name="contraseña"
+				placeholder="contraseña" value="hola1" />
 		</div>
 
 
