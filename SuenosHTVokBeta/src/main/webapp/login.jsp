@@ -18,7 +18,7 @@
 <body id="body">
 
 
-	<h1>BD Sueños</h1>
+	<h1 id="h">BD Sueños</h1>
 
 	<hr>
 	<label> ${error} </label>
@@ -32,8 +32,8 @@
 		</div> -->
 
 		<div>
-			<label>Nombre </label><input var="uno" type="nombre" name="nombre"
-				placeholder="nombre" value="hola1" />
+			<label>Nombre </label><input id="nombre" var="uno" type="nombre" name="nombre"
+				placeholder="hola1" value="hola1"/>
 		</div>
 		<!-- <div>
 			<label>Correo </label><input type="correo" name="correo"
@@ -58,7 +58,7 @@
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
 		crossorigin="anonymous "></script>
 		
-		<script type="text/javascript" src="./js/login.js"></script>
+		<!--  <script type="text/javascript" src="./js/login.js"></script>-->
 
 	
 
