@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -14,12 +15,13 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.htv.models.Sueno;
-import com.htv.models.Usuario;
+
 import com.htv.persistencia.SuenoEM;
-import com.htv.persistencia.UsuarioEM;
+import com.mindty.persistence.ProfesorEM;
 
 
-@Path("/suenos")
+
+@Path("/sueno")
 public class SuenoAPI {
 	private static Logger logger = Logger.getLogger("Customers");
 
@@ -43,7 +45,7 @@ public class SuenoAPI {
 	@Produces(MediaType.APPLICATION_JSON)
 	@POST
 	// Codigo POST
-	public Response addUsuario(Sueno SueñoNuevo) {
+	public Response addSueno(Sueno SueñoNuevo) {
 		try {
 
 			return Response.status(202).entity(SuenoEM.getInstance().NuevoSueno(SueñoNuevo)).build();
@@ -54,7 +56,7 @@ public class SuenoAPI {
 		}
 	};
 
-	@Path("/{idu}")
+	@Path("")
 	@Produces(MediaType.APPLICATION_JSON)
 	@GET
 	public Response getUsuariosPorNombre(@PathParam(value = "idu") int idu) {
@@ -66,9 +68,26 @@ public class SuenoAPI {
 		}
 
 	};
+	@Path("/editar/{ids}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@DELETE
+	public Response deleteModulo(@PathParam("idu") int idu, @PathParam("ids") int ids) {
+
+		try {
+
+			boolean bSalida = SuenoEM.getInstance().BorrarSuenoById(ids);
+			if (bSalida == true)
+				return Response.status(202).entity(bSalida).build();
+			else
+				return Response.status(400).entity("El modulo no existe en el sistema").build();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Response.status(500).entity("Ha habido un error al pedir el modulo").build();
+		}
 	
 	
-	
+}
 }
 
 
