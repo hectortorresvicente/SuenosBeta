@@ -7,6 +7,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -17,7 +18,8 @@ import javax.ws.rs.core.Response.Status;
 import com.htv.models.Sueno;
 
 import com.htv.persistencia.SuenoEM;
-import com.mindty.persistence.ProfesorEM;
+import com.mindty.persistence.CursoEM;
+
 
 
 
@@ -88,6 +90,17 @@ public class SuenoAPI {
 	
 	
 }
+	@Path("/editar/{ids}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	@PUT
+	public Response updateCurso(@PathParam("ids") int ids) {
+		try {
+			return Response.status(202).entity(SuenoEM.getInstance()).build();
+		} catch (Exception e) {
+			return Response.status(500).entity("Internal Server Error").build();
+		}
+	}
 }
 
 
